@@ -9,9 +9,9 @@ So far we have seen that the derivative of a function is the instantaneous rate 
 
 Ok, now let's talk about the chain rule.  Imagine that we would like to take the derivative of the following function:
 
-$$f(x) = (.5x + 3)^2 $$ 
+$$f(x) = (.5x + 3)^2 $$
 
-Doing something like that can be pretting tricky right off the bat.  Lucky for us, we can use the chain rule.  The chain rule is essentially a trick that can be applied when our functions get complicated.  The first step is using functional composition to break our function down. Ok, let's do it.
+Doing something like that can be pretty tricky right off the bat.  Lucky for us, we can use the chain rule.  The chain rule is essentially a trick that can be applied when our functions get complicated.  The first step is using functional composition to break our function down. Ok, let's do it.
 
 $$g(x) = .5x + 3 $$
 $$f(x) = (g(x))^2$$
@@ -60,10 +60,10 @@ Looking at both the mathematical and code representations of $f(x)$ and $g(x)$, 
 
 def g_of_x(x):
     return .5*x + 3
-    
-def f_of_x(x): # outer function f(x) 
+
+def f_of_x(x): # outer function f(x)
     return (g_of_x(x))**2 #inner function g(x)
-    
+
 ```
 
 Let's plot these two functions.
@@ -93,7 +93,7 @@ plot([g_of_x_trace, f_of_x_trace])
 
 Ok, so now that we have a sense of how our function $g(x) = .5x$ and $f(x) = (g(x))^2$ look, let's begin to take derivatives of these functions, starting with the derivative of $g(x)$, the inner function.
 
-From our rules about derivatives we know that the power rule tells us that the derivative of $g(x) = .5x$ is 
+From our rules about derivatives we know that the power rule tells us that the derivative of $g(x) = .5x$ is
 
 $$g'(x) = 1*.5x^0 = .5$$
 
@@ -105,10 +105,10 @@ Notice that the outer function $f(x)$'s output does not directly vary with $x$. 
 
 def g_of_x(x):
     return .5*x + 3
-    
-def f_of_x(x): # outer function f(x) 
+
+def f_of_x(x): # outer function f(x)
     return (g_of_x(x))**2 #inner function g(x)
-    
+
 ```
 
 > ** The chain rule**: So in taking the derivative, $\frac{\Delta f}{\Delta x}$ of an outer function, $f(x)$, which depends on an inner function $g(x)$, which depends on $x$, the derivative equals the derivative of the outer function times the derivative of the inner function.  
@@ -135,10 +135,10 @@ $$f(x) = (g(x))^2$$
 
 ** 3. Substitute into our chain rule **
 
-We have: 
+We have:
 * $ f'(g(x)) = f'g(x)*g'(x) = 2*g(x)*.5 = 1*g(x)$
 
-Then substituting for $g(x)$, which we already defined, we have: 
+Then substituting for $g(x)$, which we already defined, we have:
 
 $f'(g(x)) = g(x) = x^2$
 
@@ -152,17 +152,17 @@ The chain rule is allows us to the rate of change of a function that does not di
 
 def g_of_x(x):
     return .5*x + 3
-    
-def f_of_x(x): # outer function f(x) 
+
+def f_of_x(x): # outer function f(x)
     return (g_of_x(x))**2 #inner function g(x)
-    
+
 ```
 
 It does not directly depend on $x$, but depends on a function $g(x)$, which varies with different outputs of $x$.  So now we want to take the derivative of $f(x)$.
 
 > Remember, taking a derivative means changing a variable $x$ a little, and seeing the change in the output.  The chain rule allows us to solve the problem of seeing the change in output when our function does not **directly** depend on that changing variable, but depends on **a function ** that depends on a variable.  
 
-We can take the derivative of a function that indirectly depends on $x$, by taking the derivative of the outer function and multiplying it by the derivative of the inner function, or 
+We can take the derivative of a function that indirectly depends on $x$, by taking the derivative of the outer function and multiplying it by the derivative of the inner function, or
 
 $f'(x) = f'(g(x))*g'(x)$
 
@@ -185,7 +185,7 @@ $$f(x) = (g(x))^3$$
 $$g'(x) = 6x + 10 $$
 $$f'(x) = 3g(x))^2$$
 
-** 3. Subsitution **
+** 3. Substitution **
 
 $$f'(x) = f'(g(x))*g'(x) = 3(g(x))^2*(6x+10)$$
 
