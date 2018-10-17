@@ -78,8 +78,8 @@ from graph import trace_values, plot
 x_values = list(range(0, 10))
 f_of_x_values = list(map(lambda x: f_of_x(x),x_values))
 g_of_x_values = list(map(lambda x: g_of_x(x),x_values))
-f_of_x_trace = trace_values(x_values, f_of_x_values, mode = 'line', name = 'g(x) = .5*x')
-g_of_x_trace = trace_values(x_values, g_of_x_values, mode = 'line', name = 'f(x) = (g(x))^2')
+f_of_x_trace = trace_values(x_values, f_of_x_values, mode = 'lines', name = 'g(x) = .5*x')
+g_of_x_trace = trace_values(x_values, g_of_x_values, mode = 'lines', name = 'f(x) = (g(x))^2')
 plot([g_of_x_trace, f_of_x_trace])
 ```
 
